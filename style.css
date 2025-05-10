@@ -33,15 +33,16 @@ body {
 /* Header com hero integrado */
 header.hero {
   background-image: url('fundo.jpeg');
-  background-repeat: no-repeat;
-  background-position: top center; /* <-- começa do topo */
-  background-size: cover;
+  background-repeat: repeat; /* Não repete a imagem */
+  background-position: center center; /* Centraliza a imagem */
+  background-size: cover; /* A imagem cobre toda a área */
   animation: zoomInOut 20s ease-in-out infinite;
 
   height: 800px;
   padding: 20px 0 60px 0;
   color: #fff;
   position: relative;
+  width: 100%; /* Garante que o cabeçalho ocupe 100% da largura */
 }
 
 @media (max-width: 768px) {
