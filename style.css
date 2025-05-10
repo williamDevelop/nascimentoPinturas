@@ -45,6 +45,8 @@ header.hero {
   width: 100%; /* Garante que o cabeçalho ocupe 100% da largura */
 }
 
+
+
 @media (max-width: 768px) {
   .hero-text {
     margin-top: 0; /* <-- garante que não empurre para baixo */
@@ -77,14 +79,72 @@ nav ul li a {
   font-weight: 500;
 }
 
-/* Conteúdo Hero */
 .hero-content {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo com opacidade */
+  padding: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 60px;
+  position: relative; /* Necessário para os pingos de tinta */
 }
+
+.hero-content .pingo {
+  position: absolute;
+  bottom: -20px; /* Coloca as gotas abaixo da div */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: pingos 1.5s infinite ease-in-out; /* Animação para os pingos caindo */
+}
+
+/* Animação para criar o efeito de pingos caindo */
+@keyframes pingos {
+  0% {
+    transform: translateY(0); /* Começa fora da div */
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50px); /* A tinta cai */
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100px); /* A tinta atinge o fundo */
+    opacity: 0;
+  }
+}
+
+.hero-content .pingo:nth-child(1) {
+  left: 10%;
+  background-color: rgba(255, 0, 0, 0.7); /* Cor vermelha */
+  animation-delay: 0s; /* Inicia imediatamente */
+}
+
+.hero-content .pingo:nth-child(2) {
+  left: 30%;
+  background-color: rgba(0, 255, 0, 0.7); /* Cor verde */
+  animation-delay: 0.3s; /* Atraso para o segundo pingo */
+}
+
+.hero-content .pingo:nth-child(3) {
+  left: 50%;
+  background-color: rgba(0, 0, 255, 0.7); /* Cor azul */
+  animation-delay: 0.6s; /* Atraso para o terceiro pingo */
+}
+
+.hero-content .pingo:nth-child(4) {
+  left: 70%;
+  background-color: rgba(255, 255, 0, 0.7); /* Cor amarela */
+  animation-delay: 0.9s; /* Atraso para o quarto pingo */
+}
+
+.hero-content .pingo:nth-child(5) {
+  left: 90%;
+  background-color: rgba(255, 165, 0, 0.7); /* Cor laranja */
+  animation-delay: 1.2s; /* Atraso para o quinto pingo */
+}
+
 
 .hero-text {
   flex: 1;
